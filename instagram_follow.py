@@ -5,11 +5,7 @@ import datetime
 
 FOLLOWERS_FILE = "followers.txt"
 FOLLOWING_FILE = "following.txt"
-
 USER_FILE = "user.txt"
-
-USER_LOGIN = "datascraper_"
-USER_PASSWORD = "datascraper_"
 
 #print user info
 def _print_user_info(data):
@@ -87,7 +83,7 @@ if __name__ == '__main__':
         parser.add_argument('-un', '--username', nargs= 1, type = str, required=True, help='Target USER that will be inspected')
         
         #user and password 
-        parser.add_argument('-l', '--login', nargs= 2, type = str, help='USER and PASSWORD for login')
+        parser.add_argument('-l', '--login', nargs= 2, type = str, required=True, help='USER and PASSWORD for login')
 
         #save results to file (-s or --save)
         parser.add_argument('-s', '--save', action='store_true',  help='SAVE retrieved info to a file or files')
@@ -100,12 +96,7 @@ if __name__ == '__main__':
         #login class
         cl = Client()
 
-        #if user and password are provided, login uses this credentials
-        #else login uses "datascrape_" info 
-        if args.login:
-            cl.login(args.login[0], args.login[1])  #personal account
-        else:
-            cl.login(USER_LOGIN, USER_PASSWORD) #datascraper_ account
+        cl.login(args.login[0], args.login[1])  #personal account
 
         #get user id
         user_id = get_user_id_from_name(cl, args.username[0]) 
