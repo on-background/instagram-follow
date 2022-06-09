@@ -6,8 +6,6 @@ Get Instagram user, followers and following info and a list of followers not fol
 
 **IMPORTANT**: This code only works with public Instagram accounts or with people who you are following (if you log into your account).
 
-The default login uses ***datascrape_*** public account, so be respectful of your actions.
-
 # dependencies
 - [Instagrapi](https://adw0rd.github.io/instagrapi/):
 
@@ -32,25 +30,25 @@ The default login uses ***datascrape_*** public account, so be respectful of you
 # examples
 
 - If you want to retrieve *Cristiano Ronaldo* user info and save it to a file:</br>
-  ```python3 instagram_follow.py -u -un cristiano -s```
+  ```python3 instagram_follow.py -u -un cristiano -s -l YOUR_USER YOUR_PASSWORD```
   or
-  ```python3 instagram_follow.py --user --username cristiano --save```
+  ```python3 instagram_follow.py --user --username cristiano --save --login YOUR_USER YOUR_PASSWORD```
 
 - If you want to get *Cristiano Ronaldo* followers and followers that his is not following: </br>
-  ```python3 instagram_follow.py -wrs -un cristiano ```
+  ```python3 instagram_follow.py -wrs -un cristiano -l YOUR_USER YOUR_PASSWORD```
   or
-  ```python3 instagram_follow.py --followers --username cristiano ```
+  ```python3 instagram_follow.py --followers --username cristiano --login YOUR_USER YOUR_PASSWORD```
   
 
 - If you want to get *Cristiano Ronaldo* following and followers that are not following him and store this info:</br>
-  ```python3 instagram_follow.py -wng -un cristiano -s```
+  ```python3 instagram_follow.py -wng -un cristiano -s -l YOUR_USER YOUR_PASSWORD```
   or
-  ```python3 instagram_follow.py --following --username cristiano --save```
+  ```python3 instagram_follow.py --following --username cristiano --save --login YOUR_USER YOUR_PASSWORD```
   
 - If you want to get *Cristiano Ronaldo* following, followers and user info besides not following and not follower:</br>
-  ```python3 instagram_follow.py -a -un cristiano```
+  ```python3 instagram_follow.py -a -un cristiano -l YOUR_USER YOUR_PASSWORD```
   or
-  ```python3 instagram_follow.py --all --username cristiano```
+  ```python3 instagram_follow.py --all --username cristiano --login YOUR_USER YOUR_PASSWORD```
   
 - If you want to get *following private account* user info (you must log in):</br>
   ```python3 instagram_follow.py -u -un *account* -l YOUR_USER YOUR_PASSWORD```
